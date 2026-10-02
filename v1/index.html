@@ -45,8 +45,6 @@
       text-align: center;
       color: #fff;
     }
-    .urgency-bar .highlight { color: yellow; }
-    #countdown { font-variant-numeric: tabular-nums; }
 
     /* Vídeo */
     .video-block { padding: 40px 0 0; }
@@ -71,8 +69,8 @@
 <body>
   <div class="urgency-bar">
     <div class="txt">
-      AULA LIBERADA | De: <s>R$997,00</s> por: <span class="highlight">R$0,00</span><br />
-      - ACABA HOJE - TEMPO RESTANTE: <span id="countdown">00:00:00</span> -
+      AULA GRATUITA LIBERADA<br />
+      Assista até o final
     </div>
   </div>
 
@@ -90,20 +88,5 @@
     </div>
   </footer>
 
-  <script>
-    function updateCountdown() {
-      var now = new Date();
-      var midnight = new Date(now);
-      midnight.setHours(24, 0, 0, 0);
-      var t = Math.max(0, midnight - now);
-      var h = Math.floor(t / 3600000);
-      var m = Math.floor((t % 3600000) / 60000);
-      var s = Math.floor((t % 60000) / 1000);
-      document.getElementById("countdown").textContent =
-        [h, m, s].map(function (v) { return String(v).padStart(2, "0"); }).join(":");
-    }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
 </body>
 </html>
